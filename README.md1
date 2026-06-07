@@ -1,0 +1,101 @@
+Octane Prediction Using Multivariate Regression
+Forensic Chemistry VT2026
+Assignment Overview
+
+This project investigates the use of multivariate regression techniques to predict octane values from infrared (IR) spectroscopy data. The dataset contains petroleum samples with measured octane values and corresponding IR spectral variables.
+
+Three regression methods were implemented and compared:
+
+Multiple Linear Regression (MLR)
+Principal Component Regression (PCR)
+Partial Least Squares Regression (PLS)
+
+The objective is to determine which model provides the best predictive performance for octane concentration based on IR spectral measurements.
+
+Dataset
+
+The dataset (octane.csv) contains:
+
+Column 1: Octane value (response variable)
+Columns 2 onward: Infrared (IR) spectral measurements (predictor variables)
+Methodology
+1. Data Preparation
+Data imported into R.
+Response variable (octane) separated from predictor variables (IR spectra).
+Dataset split into:
+70% Training Set
+30% Test Set
+Predictor variables centered and scaled using the caret package.
+2. Multiple Linear Regression (MLR)
+
+A linear regression model was fitted using all available IR variables as predictors.
+
+3. Principal Component Regression (PCR)
+
+PCR was performed using cross-validation to reduce dimensionality and handle multicollinearity among spectral variables.
+
+Three principal components were selected, explaining approximately 96.41% of the variance.
+
+4. Partial Least Squares Regression (PLS)
+
+PLS regression was performed using cross-validation. Three latent variables were used for prediction.
+
+5. Model Evaluation
+
+Model performance was evaluated on the test dataset using:
+
+Root Mean Squared Error (RMSE)
+
+A lower RMSE indicates better predictive capability.
+
+Software and Packages
+
+The analysis was conducted in R using the following packages:
+
+install.packages("tidyverse")
+install.packages("pls")
+install.packages("caret")
+
+library(tidyverse)
+library(pls)
+library(caret)
+Results
+Model	RMSE
+MLR	33.4875978
+PCR	0.3093043
+PLS	0.2573786
+Best Model
+
+The model with the lowest RMSE was considered to have the best predictive performance for octane prediction.
+
+Visualisation
+
+Observed vs Predicted plots were generated for:
+
+Multiple Linear Regression (MLR)
+Principal Component Regression (PCR)
+Partial Least Squares Regression (PLS)
+
+These plots allow visual assessment of prediction accuracy and model performance.
+
+Repository Structure
+.
+├── octane.csv
+├── octane_regression.R
+├── README.md
+├── figures/
+│   ├── mlr_observed_vs_predicted.png
+│   ├── pcr_observed_vs_predicted.png
+│   └── pls_observed_vs_predicted.png
+└── report.pdf
+Conclusion
+
+This study compared three multivariate regression techniques for predicting octane values from IR spectral data. The results demonstrate the usefulness of dimensionality reduction methods such as PCR and PLS when working with highly correlated spectral variables. The model with the lowest RMSE was selected as the most suitable approach for octane prediction.
+
+Author
+
+Forensic Chemistry VT2026
+
+Multivariate Statistics Assignment
+
+University Project
