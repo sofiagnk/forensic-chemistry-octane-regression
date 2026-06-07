@@ -13,9 +13,7 @@ Partial Least Squares Regression (PLS)
 The objective is to determine which model provides the best predictive performance for octane concentration based on IR spectral measurements.
 
 Dataset
-
 The dataset (octane.csv) contains:
-
 Column 1: Octane value (response variable)
 Columns 2 onward: Infrared (IR) spectral measurements (predictor variables)
 Methodology
@@ -27,35 +25,21 @@ Dataset split into:
 30% Test Set
 Predictor variables centered and scaled using the caret package.
 2. Multiple Linear Regression (MLR)
-
 A linear regression model was fitted using all available IR variables as predictors.
-
 3. Principal Component Regression (PCR)
-
 PCR was performed using cross-validation to reduce dimensionality and handle multicollinearity among spectral variables.
-
 Three principal components were selected, explaining approximately 96.41% of the variance.
-
 4. Partial Least Squares Regression (PLS)
-
 PLS regression was performed using cross-validation. Three latent variables were used for prediction.
-
 5. Model Evaluation
-
 Model performance was evaluated on the test dataset using:
-
 Root Mean Squared Error (RMSE)
-
 A lower RMSE indicates better predictive capability.
-
 Software and Packages
-
 The analysis was conducted in R using the following packages:
-
 install.packages("tidyverse")
 install.packages("pls")
 install.packages("caret")
-
 library(tidyverse)
 library(pls)
 library(caret)
@@ -67,17 +51,13 @@ PLS	0.2573786
 Best Model
 
 The model with the lowest RMSE was considered to have the best predictive performance for octane prediction.
-
 Visualisation
-
 Observed vs Predicted plots were generated for:
-
 Multiple Linear Regression (MLR)
 Principal Component Regression (PCR)
 Partial Least Squares Regression (PLS)
 
 These plots allow visual assessment of prediction accuracy and model performance.
-
 Repository Structure
 .
 ├── octane.csv
@@ -92,10 +72,7 @@ Conclusion
 
 This study compared three multivariate regression techniques for predicting octane values from IR spectral data. The results demonstrate the usefulness of dimensionality reduction methods such as PCR and PLS when working with highly correlated spectral variables. The model with the lowest RMSE was selected as the most suitable approach for octane prediction.
 
-Author
-
+Author Sofia Gounaki
 Forensic Chemistry VT2026
-
 Multivariate Statistics Assignment
-
-University Project
+Uppsala University Project in Forensic Chemistry
